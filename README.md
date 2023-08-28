@@ -2,7 +2,7 @@
 
 A collection of PowerShell files for Windows, including common application installation through `Win-Get` and `npm`, and developer-minded Windows configuration defaults.
 
-Are you a Mac user? Check out my [dotfiles](https://github.com/jayharris/dotfiles) repository.
+Are you a Mac user? Check out my [dotfiles](https://github.com/zer4tul/dotfiles) repository.
 
 ## Installation
 
@@ -12,7 +12,7 @@ You can clone the repository wherever you want. (I like to keep it in `~\Project
 
 From PowerShell:
 ```posh
-git clone https://github.com/jayharris/dotfiles-windows.git; cd dotfiles-windows; . .\bootstrap.ps1
+git clone https://github.com/zer4tul/dotfiles-windows.git; cd dotfiles-windows; . .\bootstrap.ps1
 ```
 
 To update your settings, `cd` into your local `dotfiles-windows` repository within PowerShell and then:
@@ -30,7 +30,7 @@ Note: You must have your execution policy set to unrestricted (or at least in by
 To install these dotfiles from PowerShell without Git:
 
 ```bash
-iex ((new-object net.webclient).DownloadString('https://raw.github.com/jayharris/dotfiles-windows/master/setup/install.ps1'))
+iex ((new-object net.webclient).DownloadString('https://raw.github.com/zer4tul/dotfiles-windows/master/setup/install.ps1'))
 ```
 
 To update later on, just run that command again.
@@ -102,13 +102,13 @@ Setting up a new Windows machine often requires installation of common packages,
 
 These scripts are for my preferences; your preferences may be different.
 
-This repository is built around how I use Windows, which is predominantly in a VM hosted on macOS. As such, things like VNC, FileZilla, or Skype are not installed, as they are available to me on the macOS side, installed by my [OS X dotfiles](https://github.com/jayharris/dotfiles). If you are using Windows as your primary OS, you may want a different configuration that reflects that, and I recommend you [fork this repository](https://github.com/jayharris/dotfiles-windows/fork).
+This repository is built around how I use Windows, which is predominantly in a VM hosted on macOS. As such, things like VNC, FileZilla, or Skype are not installed, as they are available to me on the macOS side, installed by my [OS X dotfiles](https://github.com/zer4tul/dotfiles). If you are using Windows as your primary OS, you may want a different configuration that reflects that, and I recommend you [fork this repository](https://github.com/zer4tul/dotfiles-windows/fork).
 
 If you do fork for your own custom configuration, you will need to touch a few files to reference your own repository, instead of mine.
 
 Within `/setup/install.ps1`, modify the Repository variables.
 ```posh
-$account = "jayharris"
+$account = "zer4tul"
 $repo    = "dotfiles-windows"
 $branch  = "master"
 ```
@@ -121,13 +121,13 @@ iex ((new-object net.webclient).DownloadString('https://raw.github.com/$account/
 ## Feedback
 
 Suggestions/improvements are
-[welcome and encouraged](https://github.com/jayharris/dotfiles-windows/issues)!
+[welcome and encouraged](https://github.com/zer4tul/dotfiles-windows/issues)!
 
 ## Author
 
-| [![twitter/jayharris](http://gravatar.com/avatar/1318668b99b2d5a3900f3f7758763a69?s=70)](http://twitter.com/jayharris "Follow @jayharris on Twitter") |
+| [![twitter/zer4tul](http://gravatar.com/avatar/1318668b99b2d5a3900f3f7758763a69?s=70)](http://twitter.com/zer4tul "Follow @zer4tul on Twitter") |
 |---|
-| [Jay Harris](http://twitter.com/jayharris/) |
+| [Jay Harris](http://twitter.com/zer4tul/) |
 
 ## Thanks to…
 
