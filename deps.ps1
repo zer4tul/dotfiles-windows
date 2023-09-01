@@ -23,51 +23,44 @@ Get-PackageProvider NuGet -Force | Out-Null
 Write-Host "Installing PowerShell Modules..." -ForegroundColor "Yellow"
 Install-Module Posh-Git -Scope CurrentUser -Force
 Install-Module PSWindowsUpdate -Scope CurrentUser -Force
+Install-Module PSReadLine
 
 
 # system and cli
-winget install Microsoft.WebPICmd                        --silent --accept-package-agreements
+winget install MSYS2.MSYS2                               --silent --accept-package-agreements
 winget install Git.Git                                   --silent --accept-package-agreements --override "/VerySilent /NoRestart /o:PathOption=CmdTools /Components=""icons,assoc,assoc_sh,gitlfs"""
 winget install OpenJS.NodeJS                             --silent --accept-package-agreements
-winget install Python.Python.3                           --silent --accept-package-agreements
-winget install RubyInstallerTeam.Ruby                    --silent --accept-package-agreements
+winget install Anaconda.Miniconda3                       --silent --accept-package-agreements
+winget install GoLang.Go                                 --silent --accept-package-agreements
 
 # browsers
 winget install Google.Chrome                             --silent --accept-package-agreements
-winget install Mozilla.Firefox                           --silent --accept-package-agreements
-winget install Opera.Opera                               --silent --accept-package-agreements
+# winget install Mozilla.Firefox                           --silent --accept-package-agreements
+# winget install Opera.Opera                               --silent --accept-package-agreements
 
 # dev tools and frameworks
 winget install Microsoft.PowerShell                      --silent --accept-package-agreements
-winget install Microsoft.SQLServer.2019.Developer        --silent --accept-package-agreements
-winget install Microsoft.SQLServerManagementStudio       --silent --accept-package-agreements
-winget install Microsoft.VisualStudio.2022.Professional  --silent --accept-package-agreements --override "--wait --quiet --norestart --nocache --addProductLang En-us --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Workload.NetWeb"
-winget install JetBrains.dotUltimate                     --silent --accept-package-agreements --override "/SpecificProductNames=ReSharper;dotTrace;dotCover /Silent=True /VsVersion=17.0"
-winget install Vim.Vim                                   --silent --accept-package-agreements
-winget install WinMerge.WinMerge                         --silent --accept-package-agreements
-winget install Microsoft.AzureCLI                        --silent --accept-package-agreements
-winget install Microsoft.AzureStorageExplorer            --silent --accept-package-agreements
-winget install Microsoft.AzureStorageEmulator            --silent --accept-package-agreements
-#winget install Microsoft.ServiceFabricRuntime            --silent --accept-package-agreements
-#winget install Microsoft.ServiceFabricExplorer           --silent --accept-package-agreements
+winget install JetBrains.GoLand                          --silent --accept-package-agreements --override "/Silent=True"
+winget install JetBrains.PyCharm                         --silent --accept-package-agreements --override "/Silent=True"
+winget install Neovim.Neovim                             --silent --accept-package-agreements
+winget install Microsoft.VisualStudioCode                --silent --accept-package-agreements
+
+# media
+winget install  DuongDieuPhap.ImageGlass                 --silent --accept-package-agreements
+
+# utilities
+winget install  Microsoft.PowerToys                      --silent --accept-package-agreements
+winget install  QL-Win.QuickLook                         --silent --accept-package-agreements
+winget install  AgileBits.1Password                      --silent --accept-package-agreements
+winget install  Fndroid.ClashForWindows                  --silent --accept-package-agreements
+winget install  7zip.7zip                                --silent --accept-package-agreements
+winget install  JanDeDobbeleer.OhMyPosh                  --silent --accept-package-agreements
 
 Refresh-Environment
 
-gem pristine --all --env-shebang
-
-### Node Packages
-Write-Host "Installing Node Packages..." -ForegroundColor "Yellow"
-if (which npm) {
-    npm update npm
-    npm install -g yo
-}
-
-### Janus for vim
-Write-Host "Installing Janus..." -ForegroundColor "Yellow"
-if ((which curl) -and (which vim) -and (which rake) -and (which bash)) {
-    curl.exe -L https://bit.ly/janus-bootstrap | bash
-
-    cd ~/.vim/
-    git submodule update --remote
+### Nerd Font
+Write-Host "Installing Nerd Font..." -ForegroundColor "Yellow"
+if (which oh-my-posh) {
+    oh-my-posh font install
 }
 

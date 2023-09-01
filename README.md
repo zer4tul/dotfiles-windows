@@ -83,7 +83,7 @@ When setting up a new Windows PC, you may want to set some Windows defaults and 
 .\windows.ps1
 ```
 
-This script will also set your machine name, so you may want to modify this file before executing.
+This script can also set your machine name, so you may want to modify this file before executing.
 ```posh
 (Get-WmiObject Win32_ComputerSystem).Rename("MyMachineName") | Out-Null
 ```
@@ -125,9 +125,9 @@ Suggestions/improvements are
 
 ## Author
 
-| [![twitter/zer4tul](http://gravatar.com/avatar/1318668b99b2d5a3900f3f7758763a69?s=70)](http://twitter.com/zer4tul "Follow @zer4tul on Twitter") |
+| [![twitter/zer4tul](https://en.gravatar.com/userimage/9167270/aa6cc29488497aaf8e4691ed4eb54507.jpeg?size=64)](http://twitter.com/zer4tul "Follow @zer4tul on Twitter") |
 |---|
-| [Jay Harris](http://twitter.com/zer4tul/) |
+| [Zer4tul](http://twitter.com/zer4tul/) |
 
 ## Thanks to…
 
